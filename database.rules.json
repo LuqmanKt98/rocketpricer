@@ -1,0 +1,34 @@
+{
+  "rules": {
+    "users": {
+      ".read": "auth != null && root.child('users').child(auth.uid).child('role').val() === 'admin'",
+      ".indexOn": ["created_date"],
+      "$uid": {
+        ".read": "auth != null && (auth.uid === $uid || root.child('users').child(auth.uid).child('role').val() === 'admin')",
+        ".write": "auth != null && (auth.uid === $uid || root.child('users').child(auth.uid).child('role').val() === 'admin')",
+        ".validate": "newData.hasChildren(['email'])",
+        "role": {
+          ".validate": "newData.val() === 'user' || newData.val() === 'admin' || root.child('users').child(auth.uid).child('role').val() === 'admin'"
+        }
+      }
+    },
+
+    "analytics_events": {
+      ".read": "auth != null && root.child('users').child(auth.uid).child('role').val() === 'admin'",
+      ".indexOn": ["created_date", "event_type"],
+      "$id": {
+        ".write": "auth != null && !data.exists()",
+        ".validate": "newData.hasChildren(['event_type', 'created_date'])"
+      }
+    },
+
+    "invites": {
+      ".read": "auth != null && root.child('users').child(auth.uid).child('role').val() === 'admin'",
+      ".indexOn": ["created_date"],
+      "$id": {
+        ".write": "auth != null && root.child('users').child(auth.uid).child('role').val() === 'admin'",
+        ".validate": "newData.hasChildren(['email', 'created_date'])"
+      }
+    }
+  }
+}

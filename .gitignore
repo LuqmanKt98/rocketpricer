@@ -1,0 +1,62 @@
+#env
+.env
+.env.*
+# ...but keep the committed templates
+!.env.example
+!.env.migration.example
+
+# Exported Base44 data (contains user PII) — never commit
+/migration
+
+# Firebase Admin SDK service account (secret) — never commit
+*firebase-adminsdk*.json
+serviceAccountKey.json
+
+# Logs
+/logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+.env
+.vite
+
+.vercel
+
+# Playwright / test artifacts
+.playwright-mcp/
+test-*.png
+test-results/
+tests/
+
+# Build / CI artifacts
+build-output.txt
+screenshot_mobile.png
+
+# Python scripts and cache (not part of the app)
+__pycache__/
+*.pyc
+*.py
+*.pdf
+
+# MCP config (local dev tooling)
+.mcp.json

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="flame" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F7931D"/>
+      <stop offset="100%" stop-color="#FFD66B"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="#131F39"/>
+  <!-- exhaust flame -->
+  <path d="M32 50 C28.5 46 28.5 43 32 40 C35.5 43 35.5 46 32 50 Z" fill="url(#flame)"/>
+  <!-- fins -->
+  <path d="M24.5 30 C20 33 18.5 38 19 42 C22 40 24.5 38.5 26.5 38 Z" fill="#2835AB"/>
+  <path d="M39.5 30 C44 33 45.5 38 45 42 C42 40 39.5 38.5 37.5 38 Z" fill="#2835AB"/>
+  <!-- body -->
+  <path d="M32 8 C39 14 41.5 22 41.5 29 C41.5 34.5 39.5 38.5 37.5 40.5 L26.5 40.5 C24.5 38.5 22.5 34.5 22.5 29 C22.5 22 25 14 32 8 Z" fill="#F7931D"/>
+  <!-- window -->
+  <circle cx="32" cy="26" r="5.5" fill="#131F39"/>
+  <circle cx="32" cy="26" r="3.5" fill="#7EC8E3"/>
+</svg>

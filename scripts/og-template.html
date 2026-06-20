@@ -1,0 +1,129 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700;800;900&family=Poppins:wght@400;500;600;700&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1200px; height: 630px;
+    background: radial-gradient(ellipse 90% 70% at 75% 30%, #1d2d54 0%, #131F39 55%, #0d1628 100%);
+    font-family: 'Poppins', sans-serif;
+    color: #f2f2f2;
+    overflow: hidden;
+    position: relative;
+  }
+  .star { position: absolute; background: #fff; border-radius: 50%; }
+  .content {
+    position: absolute; inset: 0;
+    display: flex; align-items: center;
+    padding: 0 80px;
+    gap: 40px;
+  }
+  .left { flex: 1; z-index: 2; }
+  .kicker {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 20px; font-weight: 700;
+    letter-spacing: 6px; text-transform: uppercase;
+    color: #F7931D;
+    margin-bottom: 18px;
+  }
+  h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 76px; font-weight: 900; line-height: 1.05;
+    margin-bottom: 22px;
+  }
+  h1 .accent { color: #F7931D; }
+  h1 .tm { font-size: 30px; vertical-align: super; color: #8b93a7; }
+  .tagline {
+    font-size: 27px; font-weight: 500; line-height: 1.45;
+    color: #c7cddb;
+    margin-bottom: 34px;
+    max-width: 620px;
+  }
+  .tagline b { color: #ffffff; }
+  .stages { display: flex; gap: 12px; }
+  .chip {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 16px; font-weight: 700; letter-spacing: 1px;
+    padding: 12px 20px;
+    border-radius: 999px;
+    border: 2px solid rgba(247,147,29,0.45);
+    background: rgba(247,147,29,0.10);
+    color: #FFB85C;
+    white-space: nowrap;
+  }
+  .chip.final { background: #F7931D; color: #131F39; border-color: #F7931D; }
+  .rocket-wrap { position: relative; width: 360px; height: 540px; z-index: 2; flex-shrink: 0; }
+  .glow {
+    position: absolute; left: 50%; top: 50%;
+    width: 420px; height: 420px;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle, rgba(247,147,29,0.22) 0%, transparent 65%);
+  }
+  svg.rocket { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -54%) rotate(8deg); }
+  .footer {
+    position: absolute; bottom: 36px; left: 80px;
+    font-size: 19px; color: #8b93a7; font-weight: 500; letter-spacing: 0.5px;
+    z-index: 2;
+  }
+  .footer b { color: #c7cddb; }
+</style>
+</head>
+<body>
+  <!-- starfield -->
+  <script>
+    for (let i = 0; i < 90; i++) {
+      const s = document.createElement('div');
+      s.className = 'star';
+      const size = Math.random() * 2.4 + 0.6;
+      s.style.width = size + 'px';
+      s.style.height = size + 'px';
+      s.style.left = Math.random() * 1200 + 'px';
+      s.style.top = Math.random() * 630 + 'px';
+      s.style.opacity = (Math.random() * 0.6 + 0.15).toFixed(2);
+      document.body.appendChild(s);
+    }
+  </script>
+
+  <div class="content">
+    <div class="left">
+      <div class="kicker">Will it fly or fail?</div>
+      <h1>Rocket <span class="accent">Pricer</span><span class="tm">™</span></h1>
+      <div class="tagline"><b>4 numbers. 4 stages.</b> Validate your international pricing model from factory floor to retail shelf.</div>
+      <div class="stages">
+        <div class="chip">FACTORY</div>
+        <div class="chip">DISTRIBUTOR</div>
+        <div class="chip">WHOLESALE</div>
+        <div class="chip final">SRRP</div>
+      </div>
+    </div>
+    <div class="rocket-wrap">
+      <div class="glow"></div>
+      <svg class="rocket" width="340" height="460" viewBox="0 0 64 80">
+        <defs>
+          <linearGradient id="flame" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#F7931D"/>
+            <stop offset="100%" stop-color="#FFD66B"/>
+          </linearGradient>
+          <linearGradient id="body" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="#FFA94D"/>
+            <stop offset="55%" stop-color="#F7931D"/>
+            <stop offset="100%" stop-color="#D97812"/>
+          </linearGradient>
+        </defs>
+        <path d="M32 66 C26 58 26 52 32 46 C38 52 38 58 32 66 Z" fill="url(#flame)"/>
+        <path d="M32 74 C29 69 29 66 32 62 C35 66 35 69 32 74 Z" fill="#FFD66B" opacity="0.8"/>
+        <path d="M24.5 30 C18 34 16 40.5 16.5 46 C20.5 43.5 24 41.5 26.5 41 Z" fill="#2835AB"/>
+        <path d="M39.5 30 C46 34 48 40.5 47.5 46 C43.5 43.5 40 41.5 37.5 41 Z" fill="#2835AB"/>
+        <path d="M32 4 C40.5 11 43.5 21 43.5 29.5 C43.5 36 41 41 38.5 43.5 L25.5 43.5 C23 41 20.5 36 20.5 29.5 C20.5 21 23.5 11 32 4 Z" fill="url(#body)"/>
+        <circle cx="32" cy="25" r="6.5" fill="#131F39"/>
+        <circle cx="32" cy="25" r="4.4" fill="#7EC8E3"/>
+        <circle cx="30.5" cy="23.5" r="1.4" fill="#d8f1fa"/>
+      </svg>
+    </div>
+  </div>
+
+  <div class="footer">A free tool by <b>Two Deck Consulting</b> · International Pricing Validation</div>
+</body>
+</html>
